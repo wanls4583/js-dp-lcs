@@ -1,0 +1,17 @@
+{
+  "name": "js-dp-lcs",
+  "version": "1.0.0",
+  "description": "get longest common substring use dynamic programming by javascript",
+  "main": "src/lcs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanls4583/js-dp-lcs.git"
+  },
+  "keywords": [
+    "dp",
+    "lcs",
+    "js-dp-lcs"
+  ],
+  "author": "lisong",
+  "license": "ISC"
+}
