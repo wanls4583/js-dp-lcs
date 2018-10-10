@@ -9,23 +9,23 @@ function getLCS(arr1, arr2) {
         return sub;
     }
     var maxSize = 0;
-    var preSize = 0;
+    var preDp = [];
+    var dp = null;
     var index = -1;
     for (var i = 0; i < arr1.length; i++) {
-        var preIndex = i;
+        dp = [];
         for (var j = 0; j < arr2.length; j++) {
-            if (arr1[preIndex] == arr2[j]) {
-                preIndex++;
-                preSize++;
-                if (preSize > maxSize) {
-                    maxSize = preSize;
+            dp[j] = 0;
+            if (arr1[i] == arr2[j]) {
+                dp[j] = (preDp[j - 1] || 0) + 1;
+                if (dp[j] > maxSize) {
+                    maxSize = dp[j];
                     index = j;
                 }
-            } else {
-                preIndex = i;
-                preSize = 0;
             }
         }
+        //保存i行的结果，供i+1行使用
+        preDp = dp;
     }
     if (index > -1) {
         sub = arr2.slice(index - maxSize + 1, index + 1);
