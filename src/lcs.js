@@ -22,6 +22,7 @@ function getLCS(arr1, arr2) {
                     index = j;
                 }
             } else {
+                preIndex = i;
                 preSize = 0;
             }
         }
